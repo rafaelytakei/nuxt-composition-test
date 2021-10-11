@@ -1,5 +1,19 @@
 # nuxt-composition-test
 
+## What's been added on this boilerplate
+
+- [@nuxtjs/composition-api](https://composition-api.nuxtjs.org/) - Vue 3's Composition API in NuxtJS
+  - Composition API improves code reusability
+  - Brings some TypeScript support to Vue 2
+- [TypeScript](https://typescript.nuxtjs.org/) - Microsoft's TypeScript
+  - Allows Typing to help preventing various errors
+- [unplugin-vue2-script-setup](https://github.com/antfu/unplugin-vue2-script-setup) - Vue 3.2 Script Setup syntax for SFC's in Vue 2
+  - Removes a lot of bloat from the script section of SFC's
+- [unplugin-auto-import](https://github.com/antfu/unplugin-auto-import) - Auto Imports API's on-demand
+  - QoL plugin for Composition API: removes the need to import from `@nuxtjs/composition-api` on every usage
+- [Pinia](https://pinia.esm.dev/) - Vuex alternative with Composition API-like syntax and TS support
+  - It works way better than Vuex for usage with Composition API
+
 ## Build Setup
 
 ```bash
@@ -41,7 +55,6 @@ Layouts are a great help when you want to change the look and feel of your Nuxt 
 
 More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/layouts).
 
-
 ### `pages`
 
 This directory contains your application views and routes. Nuxt will read all the `*.vue` files inside this directory and setup Vue Router automatically.
@@ -62,8 +75,12 @@ Example: `/static/robots.txt` is mapped as `/robots.txt`.
 
 More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/static).
 
-### `store`
+### `store` - IMPORTANT CHANGES (-Vuex; +Pinia)
 
-This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
+This directory contains the [Pinia](https://pinia.esm.dev/) store files.
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
+- Why not Vuex?
+  - Doesn't integrate well with Composition API nor TS
+- Why Pinia?
+  - Good Composition API/TS support
+  - Vuex 5 will be built based on Pinia, so should be an easy transition if necessary later on

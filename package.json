@@ -6,7 +6,7 @@
     "dev": "nuxt",
     "build": "vue-tsc --noEmit && nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate",
+    "generate": "vue-tsc --noEmit && nuxt generate",
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
     "lint": "yarn lint:js",
     "test": "jest"
